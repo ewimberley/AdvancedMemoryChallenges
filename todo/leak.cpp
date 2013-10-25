@@ -21,8 +21,10 @@ Test(){
 }
 
 void a(){
-	scanf("%s", buffer);
-	printf(format, buffer2);
+	while(true){
+		scanf("%s", buffer);
+		printf(format, buffer2);
+	}
 }
 
 private:
