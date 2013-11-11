@@ -8,13 +8,14 @@ int a(){
 	char buff[10];
 	printf("buff position: %p\n", buff);
 	printf("buff2 position: %p\n", buff2);
-	scanf("%d", &position);
+	scanf("%d\n", &position);
 	if(position < 0){
 		printf("nice try...\n");
 		exit(1);	
 	}
 	position = position*2;
-	while(position < 10 && in){
+	in = 0;
+	while(position < 10 && in != '\n'){
 		scanf("%c", &in);
 		buff[position] = in;
 		printf("%d\n", position);
