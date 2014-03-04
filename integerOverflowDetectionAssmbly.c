@@ -26,7 +26,7 @@ int a(){
 	}
 
 	in = 0;
-	while (position < 10){
+	while (position < 9){
 		printf("%p\n", &vuln[position]);
 		vuln[position] = getchar();
 		position++;
