@@ -2,6 +2,12 @@
 #include "stdio.h"
 #include "stdlib.h"
 
+/*
+ * Note: this version may only work in Visual Studio. 
+ * It would be nice to get it working in gcc, but jno didn't seem to have an effect.
+ * Maybe an instruction ordering problem? Does something reset the overflow bit in the flag register?
+ */
+
 int a(){
 	int position = 0;
 	char in;
