@@ -1,3 +1,7 @@
+/*********************************************
+ * Don't try this one yet, it isn't finished.*
+ *********************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
