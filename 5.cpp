@@ -10,6 +10,7 @@
 //seeping through a rift.
 
 //To complete this challenge, be like water and find the cracks.
+//Note: if you are trying this on a system that doesn't have heap metadata protection, it won't be much fun.
 
 /**
  * A class that contains a character array, provides a method for reading standard input into it.
