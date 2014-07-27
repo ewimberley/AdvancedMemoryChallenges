@@ -1,10 +1,15 @@
-/*********************************************
- * Don't try this one yet, it isn't finished.*
- *********************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+//Logic flows like water,
+//powerful and swift.
+//If you are not careful
+//friend you just might find:
+//logic turns against you,
+//seeping through a rift.
+
+//To complete this challenge, be like water and find the cracks.
 
 /**
  * A class that contains a character array, provides a method for reading standard input into it.
@@ -62,21 +67,25 @@ int main(){
 	char action[32];
 	Test* tests[10];
 	int onTest = 0;
+	int setTest = 0;
 	Command* commands[10];
 	int onCommand = 0;
+	int runCommand = 0;
 	Fluff* someFluff[5];
 	int onFluff = 0;
 	
 	do {
 		scanf("%31s", action);
 		printf("running action %s\n", action);
-		if(strcmp("newtest",action) == 0){
+		//make a new test
+		if(strcmp("newtest", action) == 0){
 			if(onTest < 10){
 				tests[onTest] = new Test();
 				onTest++;
 			}
 		}
-		else if(strcmp("newcommand",action) == 0){
+		//make a new command, also add some fluff
+		else if(strcmp("newcommand", action) == 0){
 			if(onFluff < 5){
 				someFluff[onFluff] = new Fluff();
 				onFluff++;
@@ -86,20 +95,33 @@ int main(){
 				onCommand++;
 			}
 		}
-		else if(strcmp("settest",action) == 0){
-			for(int i = 0; i < 5; i++){
-				delete someFluff[i];
+		//set the value of any test, get rid of some fluff
+		else if(strcmp("settest", action) == 0){
+			printf("Number of tests:%d Set test number:", onTest);
+			scanf("%d", &setTest);
+			if(setTest >= 0 && setTest < onTest){
+				tests[setTest]->a();
 			}
-			if(onCommand < 10){
-				tests[onTest]->a();
+			if(onFluff < 5 && someFluff[onFluff] != NULL){
+				delete someFluff[onFluff];
 			}
 		}
-		else if(strcmp("runcommand",action) == 0){
-			if(onCommand < 10){
-				commands[onCommand]->a();
+		//run any command
+		else if(strcmp("runcommand", action) == 0){
+			printf("Number of commands:%d Run command number:", onCommand);
+			scanf("%d", &runCommand);
+			if(runCommand >= 0 && runCommand < onCommand){
+				commands[runCommand]->a();
 			}
 		}
 		
 	} while(strcmp("quit",action) != 0);
-	//delete c1;
+
+	//cleanup
+	for(int i = 0; i < 10; i++){
+		delete commands[i];
+	}
+	for(int i = 0; i < 10; i++){
+		delete tests[i];
+	}
 }
