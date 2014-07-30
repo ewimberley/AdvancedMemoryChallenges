@@ -5,5 +5,6 @@ all:
 	g++-4.8 -I./ -g -o 4.bin -fsanitize=address 4.cpp
 	g++-4.8 -I./ -g -o impossible.bin -ftrapv -fsanitize=address impossible.cpp
 	g++-4.8 -I./ -g -o 5.bin -fstack-protector-all 5.cpp
+	g++-4.8 -I./ -g -o 6.bin -fsanitize=address 6.cpp
 clean:
 	rm -f *.bin *.o *.so *_expanded.cpp 
