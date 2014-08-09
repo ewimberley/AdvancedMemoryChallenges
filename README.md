@@ -31,6 +31,8 @@ http://packetstormsecurity.com/files/123977/Bypassing-AddressSanitizer.html
 ----------------------------------------------------------------------------------
 
 Hints and Challenge Description
+
+
 1. Stack Objects - Did you know you could put objects on the stack? -fstack-protector-all prevents you from writing over the stored instruction pointer, but that doesn't mean it prevents *all* buffer overflows on the stack. Just don't write over the canary...
 
 2. Heap Objects - Overflowing is a little bit different on the heap. Metadata checks will test the linked list pointers used to maintain allocations. If you free/delete after a heap overflow on modern clib you're likely to get a segfault.
